@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drag</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div draggable="true">Drag me!</div>
+
+
+    <script>
+        const draggableElement = document.querySelector('[draggable=true]');
+        draggableElement.addEventListener('dragstart', dragStart);
+        draggableElement.addEventListener('drag', drag);
+        draggableElement.addEventListener('dragend', dragEnd);
+        function dragStart(event) {
+            event.dataTransfer.setData('text/plain', event.target.id);
+            event.currentTarget.style.backgroundColor = 'yellow';
+        }
+
+        function drag(event) {
+            const x = event.clientX;
+            const y = event.clientY;
+            event.target.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function dragEnd(event) {
+            event.currentTarget.style.backgroundColor = '';
+        }
+
+        
+        const dropTarget = document.querySelector('.drop-target');
+        dropTarget.addEventListener('drop', drop);
+        function drop(event) {
+            event.preventDefault();
+            const data = event.dataTransfer.getData('text/plain');
+            const draggedElement = document.getElementById(data);
+            event.currentTarget.appendChild(draggedElement);
+        }
+
+    </script>
+</body>
+
+</html>
