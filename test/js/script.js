@@ -36,7 +36,7 @@ containers.forEach(function (container) {
         start: "top 90%",
         end: "top top",
         immediateRender: false,
-        markers: true
+        // markers: true
       }
     }
   );
@@ -59,7 +59,7 @@ banners.forEach(function (banner) {
         start: "top 95%",
         end: "top -70%",
         immediateRender: false,
-        markers: true
+        // markers: true
       }
     }
   );

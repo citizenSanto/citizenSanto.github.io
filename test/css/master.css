@@ -52,12 +52,12 @@ body {
     font-family: var(--font-condensed);
     line-height: 72%;
     margin: 0;
-    border: solid 1px red;
+    /* border: solid 1px red; */
   }
 
   header, section {
     padding: 10vh 0;
-    border: solid 1px greenyellow;
+    /* border: solid 1px greenyellow; */
   }
 
 
