@@ -50,7 +50,7 @@ banners.forEach(function (banner) {
     banner.querySelectorAll(".ticker"),
     { x: 0, },
     {
-      x: -1000,
+      x: -500,
     //   stagger: 0.3,
       scrollTrigger: {
         trigger: banner,
@@ -66,16 +66,42 @@ banners.forEach(function (banner) {
 });
 
 
+ScrollTrigger.create({
+  trigger: "#nbgn",
+  start: "top top", 
+  end: "bottom bottom",
+  pin: "#nbgn-side"
+});
 
+ScrollTrigger.create({
+  trigger: "#bcr",
+  start: "top top", 
+  end: "bottom bottom",
+  pin: "#bcr-side"
+});
+
+ScrollTrigger.create({
+  trigger: "#poster1",
+  start: "top top", 
+  end: "bottom bottom",
+  pin: "#poster1-side"
+});
+
+ScrollTrigger.create({
+  trigger: "#poster2",
+  start: "top top", 
+  end: "bottom bottom",
+  pin: "#poster2-side"
+});
 
 
 // splitter testing
-let tl = gsap.timeline();
-let mySplitText = new SplitText("#split-stagger", { type: "words,chars" });
-let chars = mySplitText.chars;
+// let tl = gsap.timeline();
+// let mySplitText = new SplitText("#split-stagger", { type: "words,chars" });
+// let chars = mySplitText.chars;
 
-chars.forEach((char, i) => {
- smoother.effects(char, { speed: 1, lag: (i + 1) * 0.1 });
-});
+// chars.forEach((char, i) => {
+//  smoother.effects(char, { speed: 1, lag: (i + 1) * 0.1 });
+// });
 
 
