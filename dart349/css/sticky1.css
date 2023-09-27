@@ -39,14 +39,14 @@ nav a:hover {
   justify-content: flex-start;
   align-items: baseline;
   margin: 2rem 10rem 2rem 2rem;
-  padding-top: 1rem;
+  padding-top: 3rem; /* same as stick pos top in .stickme */
   /* border:solid 1px red; */
 }
 
 .stickme {
   padding: 2rem;
   position: sticky;
-  top:2rem;
+  top:3rem; /* see .sticker-container */
   /* border:solid 1px blueviolet; */
   flex:1;
 }
